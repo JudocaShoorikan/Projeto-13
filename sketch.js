@@ -10,12 +10,7 @@ function preload(){
   green_balloonImage = loadImage("green_balloon0.png");
   pink_balloonImage = loadImage("pink_balloon0.png");
   blue_balloonImage = loadImage("blue_balloon0.png");
-
-  // red_balloonImage = loadImage("red_balloon0.png");
-  // red_balloonImage = loadImage("redballoon0.png");
-  // red_balloonImage = loadImage("red_balloon0");
-  //red_balloonImage = loadImage("red_balloon0.png");
-
+  red_balloonImage = loadImage("red_balloon0.png");
 }
 
 
@@ -33,11 +28,11 @@ function setup() {
   bow.addImage(bowImage); 
   bow.scale = 1;
   
-   score = 0
+  score = 0
 }
 
 function draw() {
- background(0);
+  background(0);
   // movendo chão
     scene.velocityX = -3 
 
@@ -55,11 +50,8 @@ function draw() {
   }
   
   //criando inimigos continuamente
- 
-   // var select_balloon = Math.round(random(1,4));
-  // var select_balloon = random(1,4);
-  // var select_balloon = Math.round(random());
-  // var select_balloon = Math.round(random(1,4,2));
+
+  var select_balloon = Math.round(random(1,4));
   
   if (World.frameCount % 100 == 0) {
     if (select_balloon == 1) {
@@ -79,7 +71,7 @@ function draw() {
 
 
 // Criando flechas para arco
- function createArrow() {
+function createArrow() {
   var arrow= createSprite(100, 100, 60, 10);
   arrow.addImage(arrowImage);
   arrow.x = 360;
@@ -89,37 +81,14 @@ function draw() {
   arrow.scale = 0.3;
 }
 
-// function redBalloon() {
-//   var red = createSprite(0,50, 10, 10);
-//   red.addImage(red_balloonImage);
-//   red.velocityX = 3;
-//   red.lifetime = 150;
-//   red.scale = 0.1;
-// }
+function redBalloon() {
+  var red = createSprite(0,Math.round(random(20, 370)), 10, 10);
+  red.addImage(red_balloonImage);
+  red.velocityX = 3;
+  red.lifetime = 150;
+  red.scale = 0.1;
+}
 
-// function redBalloon() {
-//   var red = createSprite(,Math.round(random(20, 370)),50, 10, 10);
-//   red.addImage(red_balloonImage);
-//   red.velocityX = 3;
-//   red.lifetime = 150;
-//   red.scale = 0.1;
-// }
-
-// function redBalloon() {
-//   var red = createSprite(0,Math.round(random(20, 370)), 10, 10);
-//   red.addImage(red_balloonImage);
-//   red.velocityX = 3;
-//   red.lifetime = 150;
-//   red.scale = 0.1;
-// }
-
-// function redBalloon() {
-//   var red = createSprite(0, 10, Math.round(random(20, 370)) , 10);
-//   red.addImage(red_balloonImage);
-//   red.velocityX = 3;
-//   red.lifetime = 150;
-//   red.scale = 0.1;
-// }
 
 function blueBalloon() {
   var blue = createSprite(0,Math.round(random(20, 370)), 10, 10);
